@@ -36,5 +36,5 @@ class Membership(models.Model):
   eater = models.ForeignKey(Eater)
   club = models.ForeignKey(Club)
   def __unicode__(self):
-    return 'Membership of ' + str(self.eater), 'at', str(self.club)
+    return 'Membership of ' + str(self.eater) + ' at ' + str(self.club)
 
