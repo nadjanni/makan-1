@@ -1,0 +1,22 @@
+<p> This is location: {{location.location_name}} </p>
+
+<p> Experiences for Location: {{location.location_name}} </p>
+{% if experiences_list %}
+  <ul>
+    {% for e in experiences_list %}
+      <li>{{e.reviewer.name}}: {{e.notes}}</li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p> There are no experiences. </p>
+{% endif %}
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'makanclubs:experience location' location.id %}" method='post'>
+  {% csrf_token %}
+  Experience:<br>
+  <input type='text' name='experience' required />
+  <br><br>
+  <input type='submit' value='Add Experience' />
+</form>

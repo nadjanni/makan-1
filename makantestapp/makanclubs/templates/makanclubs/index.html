@@ -1,0 +1,13 @@
+{% load staticfiles %}
+
+<link rel='stylesheet' type='text/css' href="{% static 'makanclubs/style.css' %}" />
+
+{% if newest_clubs_list %}
+  <ul>
+    {% for c in newest_clubs_list %}
+      <li><a href='{% url 'makanclubs:club detail' c.id %}'>{{c.club_name}}</a></li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p> No clubs available. </p>
+{% endif %}

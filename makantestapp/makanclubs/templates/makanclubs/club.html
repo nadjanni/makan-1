@@ -1,0 +1,10 @@
+<p> This is club {{c.club_name}} </p>
+{% if members_list %}
+  <ul>
+    {% for m in members_list %}
+      <li><a href='/makanclubs/eaters/{{m.id}}/'>{{m.name}}</a></li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p> The club has no eaters. </p>
+{% endif %}

@@ -27,7 +27,7 @@ class Experience(models.Model):
   notes = models.CharField(max_length = 500)
   venue = models.ForeignKey(Location)
   appreciates = models.IntegerField(default = 0)
-  experience_date = models.DateTimeField('date of experience')
+  experience_date = models.DateTimeField('date of experience', default=timezone.now)
   create_date = models.DateTimeField('date created', default=timezone.now)
   def __unicode__(self):
     return 'Experience of ' + str(self.reviewer) + ' at ' + str(self.venue)

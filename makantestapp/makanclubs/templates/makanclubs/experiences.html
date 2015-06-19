@@ -1,0 +1,10 @@
+<p> Experiences for Location: {{location.location_name}} </p>
+{% if experiences_list %}
+  <ul>
+    {% for e in experiences_list %}
+      <li>{{e.reviewer.name}}: {{e.notes}}</li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p> There are no experiences. </p>
+{% endif %}
